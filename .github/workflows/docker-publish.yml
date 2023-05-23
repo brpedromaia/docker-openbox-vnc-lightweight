@@ -24,11 +24,11 @@ jobs:
             push: true
             tags: brpedromaia/openbox-vnc-lightweight:v${{github.run_number}},brpedromaia/openbox-vnc-lightweight:latest
             file: "./ContainerFile"
-            build-args: FROM_CONTAINER_IMAGE="alpine:3.17.1"
+            build-args: FROM_CONTAINER_IMAGE=alpine:3.17.1
        -  name: Build and push X86
           uses: docker/build-push-action@v4
           with:
             push: true
             tags: brpedromaia/openbox-vnc-lightweight:v${{github.run_number}},brpedromaia/openbox-vnc-lightweight:latest
             file: "./ContainerFile"
-            build-args: FROM_CONTAINER_IMAGE="i386/alpine:3.17.1"
+            build-args: FROM_CONTAINER_IMAGE=i386/alpine:3.17.1
