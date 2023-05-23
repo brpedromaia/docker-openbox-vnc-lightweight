@@ -1,19 +1,12 @@
-FROM alpine:3.17.1
+ARG FROM_CONTAINER_IMAGE
+
+FROM $FROM_CONTAINER_IMAGE
     
 ENV DISPLAY=":1" \
-    SCREEN_RESOLUTION="1024x768"
-    
-#     
+    SCREEN_RESOLUTION="1024x768" 
 
 RUN apk update; \
     apk add --no-cache bash xvfb terminus-font openbox tint2 xterm x11vnc ;\
-    #  xdotool xterm python3 ;\
-    # apk add --no-cache --virtual .deps curl ;\
-    # mkdir -p /usr/local/noVNC ;\
-    # curl -sL https://github.com/novnc/noVNC/archive/refs/tags/v${NOVNC_VERSION}.tar.gz | tar -zx --strip-component=1 -C /usr/local/noVNC/; \
-    # mkdir -p /usr/local/noVNC/utils/websockify ;\
-    # curl -sL  https://github.com/novnc/websockify/archive/refs/tags/v${WEBSOCKIFY_VERSION}.tar.gz | tar -zx --strip-component=1 -C /usr/local/noVNC/utils/websockify/; \
-    # apk del .deps; \
     rm -rf /var/cache/apk/* /tmp/* /sbin/halt /sbin/poweroff /sbin/reboot /tmp/winetricks-${WINETRICKS_VERSION}
 
 SHELL ["/bin/bash", "-c"]
