@@ -1,0 +1,8 @@
+#!/bin/bash
+
+/usr/bin/Xvfb $DISPLAY -screen 0 1024x768x16 &
+sleep 2 
+openbox-session &
+tint2 &
+exec $@ &
+x11vnc -ncache 0 -forever -cursor arrow -display $DISPLAY -xkb -noxrecord -noxfixes -noxdamage -wait 5 -shared
