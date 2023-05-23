@@ -29,6 +29,6 @@ jobs:
           uses: docker/build-push-action@v4
           with:
             push: true
-            tags: brpedromaia/openbox-vnc-lightweight:i386/v${{github.run_number}},brpedromaia/openbox-vnc-lightweight:i386/latest
+            tags: brpedromaia/openbox-vnc-lightweight:v${{github.run_number}}-i386,brpedromaia/openbox-vnc-lightweight:latest-i386
             file: "./ContainerFile"
             build-args: FROM_CONTAINER_IMAGE=i386/alpine:3.17.1
