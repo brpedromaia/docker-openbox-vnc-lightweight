@@ -1,8 +1,8 @@
 FROM alpine:3.17.1
     
 ENV DISPLAY=":1" \
-    NOVNC_VERSION="1.4.0" \
-    WEBSOCKIFY_VERSION="0.11.0"
+    SCREEN_RESOLUTION="1024x768"
+    
 #     
 
 RUN apk update; \
